@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#068697</color>
+    <color name="colorPrimaryDark">#1EB5A7</color>
+    <color name="colorAccent">#FDF8F6</color>
+    <color name="transparent">#05FFFFFF</color>
+    <color name="colorBlack">#090403</color>
+    <color name="colorWhite">#BFF9FAFB</color>
+    <!-- Blue Grey 200 -->
+    <color name="colorBackgroundEnd">#2B395C</color>
+    <color name="colorBackgroundEndGold">#c49c3c</color>
+    <!-- Grey 50 -->
+    <color name="colorBackgroundStart">#768EB8</color>
+    <color name="colorBackgroundStartGold">#EAD771</color>
+</resources>

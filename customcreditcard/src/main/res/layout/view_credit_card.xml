@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack"
+    android:orientation="vertical"
+    android:padding="8dp">
+
+    <include
+        android:id="@+id/incCreditCardBack"
+        layout="@layout/view_credit_card_back"
+        android:animateLayoutChanges="true" />
+
+    <include
+        android:id="@+id/incCreditCardFront"
+        layout="@layout/view_credit_card_front"
+        android:animateLayoutChanges="true" />
+
+
+</FrameLayout>
