@@ -80,3 +80,4 @@ fun getDigitArray(
     }
     return digits
 }
+

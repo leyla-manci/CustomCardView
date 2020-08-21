@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="creditCardView_attrs">
+        <attr name="visibleDuration" format="integer" />
+        <attr name="invisibleDuration" format="integer" />
+        <attr name="visibleRotation" format="integer" />
+    </declare-styleable>
+</resources>
