@@ -67,11 +67,11 @@ fun getDigitArray(
     if (s == null) {
         return CharArray(0)
     }
-    var digits = CharArray(s.length)
+    val digits = CharArray(s.length)
     var index = 0
     var i = 0
     while (i < s.length && index < size) {
-        var current = s[i]
+        val current = s[i]
         if (current.isDigit()) {
             digits[index] = current
             index++
