@@ -13,11 +13,14 @@ import android.text.Editable
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
  */
 fun isInputCorrect(
-    s: Editable,
+    s: Editable?,
     size: Int,
     dividerPosition: Int,
     divider: Char
 ): Boolean {
+    if (s == null) {
+        return true
+    }
     var isCorrect = (s.length <= size)
     (0 until s.length).forEach { i ->
         isCorrect = if (i > 0 && ((i + 1) % dividerPosition == 0)) {
@@ -30,29 +33,41 @@ fun isInputCorrect(
 }
 
 fun concatString(
-    digits: CharArray,
+    digits: CharArray?,
     dividerPosition: Int,
     divider: Char
 ): String {
+    if (digits == null) {
+        return ""
+    }
     val formatted = StringBuilder()
+    var prevCharacter = '#'
     for (i in 0 until digits.size) {
-        if (digits[i] != '0') {
+        // if (digits[i] != '0' || i > 0) {
+        if (digits[i].isDigit()) {
             formatted.append(digits[i])
             if ((i > 0) && (i < (digits.size - 1)) && (((i + 1) % dividerPosition) == 0)) {
-                formatted.append(divider)
+                if (prevCharacter != divider) {
+                    formatted.append(divider)
+                }
             }
+            prevCharacter = formatted.last()
         }
+        // }
     }
 
     return formatted.toString()
 }
 
 fun getDigitArray(
-    s: Editable,
+    s: Editable?,
     size: Int
 )
         : CharArray {
-    var digits = CharArray(size)
+    if (s == null) {
+        return CharArray(0)
+    }
+    var digits = CharArray(s.length)
     var index = 0
     var i = 0
     while (i < s.length && index < size) {

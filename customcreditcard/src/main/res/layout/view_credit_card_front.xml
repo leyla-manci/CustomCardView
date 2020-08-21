@@ -31,6 +31,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
                 android:layout_weight="1">
 
                 <EditText
@@ -42,14 +43,13 @@
                     android:inputType="phone"
                     android:maxLength="19"
                     android:maxLines="1"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/colorBackgroundEnd"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="2.5">
 
@@ -62,8 +62,6 @@
                     android:inputType="date"
                     android:maxLength="5"
                     android:maxLines="1"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/colorBackgroundEnd"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -78,6 +76,7 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
                 android:layout_weight="1">
 
                 <EditText
@@ -88,8 +87,6 @@
                     android:hint="@string/card_holder"
                     android:inputType="textCapCharacters"
                     android:maxLines="1"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/colorBackgroundEnd"
                     android:textSize="14sp"
                     tools:ignore="InvalidId" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -101,9 +98,10 @@
                 android:layout_marginLeft="8dp"
                 android:layout_weight="2.5"
                 android:background="@color/transparent"
-                android:drawableRight="@drawable/ic_security"
+                android:drawableRight="@drawable/ic_rotate_right"
+                android:drawableTint="@color/colorBackgroundEndGold"
                 android:text="@string/cvc"
-                android:textColor="@color/colorWhite" />
+                android:textColor="@color/txtInputUpColor" />
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

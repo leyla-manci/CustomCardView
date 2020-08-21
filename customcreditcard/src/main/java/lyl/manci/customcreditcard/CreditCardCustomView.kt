@@ -1,6 +1,8 @@
 package lyl.manci.customcreditcard
 
 import android.content.Context
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.cardview.widget.CardView
@@ -33,7 +35,7 @@ class CreditCardCustomView @JvmOverloads constructor(
         5 // means divider position is every 5th symbol beginning with 1
     val CARD_NUMBER_DIVIDER_POSITION =
         CARD_NUMBER_DIVIDER_MODULO - 1 // means divider position is every 4th symbol beginning with 0
-    val CARD_NUMBER_DIVIDER = '-'
+    val CARD_NUMBER_DIVIDER = ' '
 
     val CARD_DATE_TOTAL_SYMBOLS = 5 // size of pattern MM/YY
     val CARD_DATE_TOTAL_DIGITS = 4 // max numbers of digits in pattern: MM + YY
@@ -57,5 +59,74 @@ class CreditCardCustomView @JvmOverloads constructor(
             incCreditCardFront.animate().rotation(0F).translationX(0F).alpha(1.0F).duration = 1000
             incCreditCardBack.animate().translationY(0F).alpha(0.0F).duration = 700
         }
+        txtCardNumber.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0 != null) {
+                    if (!isInputCorrect(
+                            p0,
+                            CARD_NUMBER_TOTAL_SYMBOLS,
+                            CARD_NUMBER_DIVIDER_MODULO,
+                            CARD_NUMBER_DIVIDER
+                        )
+                    ) {
+                        p0.replace(
+                            0,
+                            p0.length,
+                            concatString(
+                                getDigitArray(p0, CARD_NUMBER_TOTAL_DIGITS),
+                                CARD_NUMBER_DIVIDER_POSITION,
+                                CARD_NUMBER_DIVIDER
+                            )
+                        )
+                    }
+                }
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+        })
+        txtCardExpire.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                if (p0 != null) {
+                    if (!isInputCorrect(
+                            p0,
+                            CARD_DATE_TOTAL_SYMBOLS,
+                            CARD_DATE_DIVIDER_MODULO,
+                            CARD_DATE_DIVIDER
+                        )
+                    ) {
+                        p0.replace(
+                            0,
+                            p0.length,
+                            concatString(
+                                getDigitArray(p0, CARD_DATE_TOTAL_DIGITS),
+                                CARD_DATE_DIVIDER_POSITION,
+                                CARD_DATE_DIVIDER
+                            )
+                        )
+                    }
+                }
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+        })
+        txtCardHolder.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                txtCardHolderBackSide.text = p0
+
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+        })
+
+
     }
 }

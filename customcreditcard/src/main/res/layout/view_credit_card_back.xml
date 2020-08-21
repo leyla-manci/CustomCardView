@@ -28,17 +28,22 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/txtCardHolderBackSide"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:drawableLeft="@drawable/ic_credit_card"
                 android:gravity="center"
                 android:text="@string/card_holder"
-                android:textColor="@color/colorWhite"
+                android:drawableTint="@color/colorBackgroundEndGold"
+                android:paddingTop="12dp"
+                android:textColor="@color/colorBackgroundEndGold"
                 android:textSize="16sp" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
                 android:layout_marginLeft="4dp"
                 android:layout_weight="2.5">
 
@@ -50,8 +55,6 @@
                     android:inputType="number"
                     android:maxLength="3"
                     android:maxLines="1"
-                    android:textColor="@android:color/black"
-                    android:textColorHint="@color/colorBackgroundEnd"
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -76,8 +79,8 @@
                 android:layout_marginLeft="8dp"
                 android:layout_weight="2.5"
                 android:background="@color/transparent"
-                android:drawableRight="@drawable/ic_credit_card"
-                android:text="@string/front"
+                android:drawableRight="@drawable/ic_rotate_left"
+                android:drawableTint="@color/colorBackgroundEndGold"
                 android:textColor="@color/colorWhite" />
         </LinearLayout>
     </LinearLayout>
