@@ -45,6 +45,7 @@ custom view for credit card, Kotlin, Android, Animation,CustomView,CustomAttribu
 -Katkı Sunanlar---
 * Ahmed Tarek : https://www.raywenderlich.com/142-android-custom-view-tutorial
 * Gökhan Öztürk : https://github.com/KeKod/CreditCardAnimation
+* Tyulkanov Igor :https://github.com/Gary111/MaskedEditText
 
 * Leyla Akmancı | [leyla.manci@gmail.com](mailto:leyla.manci@gmail.com)
 
